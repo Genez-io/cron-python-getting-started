@@ -16,7 +16,7 @@ backend:
   # Information about the backend's functions.
   functions:
     # The name (label) of the function.
-    - name: hello-world-function
+    - name: hello-cron-function
       # The path to the function's code.
       path: ./
       # The name of the function handler
@@ -29,7 +29,7 @@ services:
     # The name of the cron job.
     - name: my-cron
       # The function to be invoked.
-      function: ${{backend.functions.hello-world-function.name}}
+      function: ${{backend.functions.hello-cron-function.name}}
       # The schedule of the cron job.
       schedule: "0 * * * *"
       # The endpoint of the cron job.
